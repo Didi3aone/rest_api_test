@@ -7,3 +7,7 @@ gunakan postman untuk tester api <br>
 
 http://localhost/rest_api_test/index.php/api/add
 
+use key : =>
+name = value
+email = value
+file = value
