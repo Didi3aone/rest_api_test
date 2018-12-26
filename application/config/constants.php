@@ -83,3 +83,44 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+/*
+|--------------------------------------------------------------------------
+| API CONSTANT
+|--------------------------------------------------------------------------
+*/
+// Only allow ajax requests
+define ("ERROR_CODE_1",'Only AJAX requests are acceptable.');
+// Should we answer if not over SSL?
+define ("ERROR_CODE_2",'Unsupported protocol.');
+//api key not valid
+define ("ERROR_CODE_3",'API Key tidak valid.');
+//api key dont have access to the requested controller.
+define ("ERROR_CODE_4",'This API key does not have access to the requested controller.');
+//if method is unknown
+define ("ERROR_CODE_5",'Unknown method.');
+//api key reach hourly limit
+define ("ERROR_CODE_6",'This API key has reached the hourly limit for this method.');
+// They don't have good enough perms
+define ("ERROR_CODE_7",'This API key does not have enough permissions.');
+// If the method doesn't exist
+define ("ERROR_CODE_8",'Controller method does not exist.');
+//if the user is logged in with a PHP session key and dont have session
+define ("ERROR_CODE_9",'Not Authorized.');
+//not valid auth
+define ("ERROR_CODE_10",'Invalid credentials.');
+//ip address is in white list (in rest config)
+define ("ERROR_CODE_11",'IP not authorized.');
+
+//custom error code
+define ("ERROR_CODE_12",'Parameter %FIELD% harus dikirim.');
+define ("ERROR_CODE_13",'%FIELD% harus diisi.');
+define ("ERROR_CODE_14",'Panjang Password adalah 6 - 50.');
+define ("ERROR_CODE_15",'%FIELD% salah.');
+define ("ERROR_CODE_16",'%FIELD% Gagal. Mohon dicoba kembali.');
+define ("ERROR_CODE_17",'File gagal di upload. Error : %ERROR%.');
+define ("ERROR_CODE_18",'Password Lama tidak cocok.');
+define ("ERROR_CODE_19",'Password Baru tidak boleh sama dengan Password Lama.');
+define ("ERROR_CODE_20",'%FIELD% invalid.');
+define ("ERROR_CODE_23",'Database operation failed.');
