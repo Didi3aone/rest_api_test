@@ -31,12 +31,17 @@ class Api extends REST_Controller {
             'email'     => $email,
         );
 
-        if (!preg_match('/^[A-Za-z0-9]+$/', $nama))
-		{
-		    $arrayToDB['note'] = "true";
-		} else {
-			$arrayToDB['note'] = "false";
-		}
+        if(count(array_count_values(str_split($nama))) == 1) {
+           $arrayToDB['note']  = "true";
+        } else {
+            $arrayToDB['note'] = "false";
+        }
+  //       if (!preg_match('/^[A-Za-z0-9]+$/', $nama))
+		// {
+		//     $arrayToDB['note'] = "true";
+		// } else {
+		// 	$arrayToDB['note'] = "false";
+		// }
 
          if (isset($_FILES['foto']['size']) && $_FILES['foto']['size'] > 0) {
          	// print_r($this->input->post());
@@ -69,7 +74,7 @@ class Api extends REST_Controller {
                 $arrayToDB['image'] = $upload_result['result'][0]['uploaded_path'];
             }
         }
-
+        // print_r($$upload_result['result'][0]['uploaded_path']);exit();
         //update user data
         $result = $this->db->insert("user",$arrayToDB);
 
@@ -82,7 +87,9 @@ class Api extends REST_Controller {
             $this->db->trans_commit();
 
             //return user data and user reports
-            $this->response($this->_result_OK(array("user" => $result)) , REST_Controller::HTTP_OK);
+            $this->response($this->_result_OK(array(
+                "response" => $result)) 
+            , REST_Controller::HTTP_OK);
         }
     }
 }
