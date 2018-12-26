@@ -31,11 +31,15 @@ class Api extends REST_Controller {
             'email'     => $email,
         );
 
-        if(count(array_count_values(str_split($nama))) == 1) {
+        foreach(count_chars($nama) as $key => $val ) {
+        }
+        if( $val == 1) {
            $arrayToDB['note']  = "true";
         } else {
             $arrayToDB['note'] = "false";
         }
+        // if(count(array_count_values(str_split($nama))) == 1) {
+           
   //       if (!preg_match('/^[A-Za-z0-9]+$/', $nama))
 		// {
 		//     $arrayToDB['note'] = "true";
